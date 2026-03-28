@@ -1,0 +1,57 @@
+name: Build App Radar
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            gfortran \
+            libproj-dev \
+            proj-data \
+            proj-bin \
+            libgeos-dev \
+            libopenjp2-7-dev \
+            libatlas-base-dev \
+            libbz2-dev \
+            liblzma-dev \
+            libcurl4-openssl-dev
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build radar frames
+        env:
+          RADAR_SITE: KBOX
+          RADAR_FRAME_COUNT: "12"
+          APP_RADAR_OUTPUT_DIR: output
+        run: python build_app_radar.py
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          publish_branch: gh-pages
+          force_orphan: true
