@@ -44,10 +44,10 @@ OUT_DIR = Path(os.environ.get("APP_RADAR_OUTPUT_DIR", "output"))
 
 # Cape Cod-focused extent for app overlay use.
 BOUNDS = {
-    "north": 42.95,
-    "south": 40.75,
-    "east": -69.15,
-    "west": -71.75,
+    "north": 42.45,
+    "south": 41.10,
+    "east": -69.35,
+    "west": -71.35,
 }
 
 
