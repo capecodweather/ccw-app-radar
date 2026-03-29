@@ -110,32 +110,29 @@ def compute_bounds(radar) -> dict[str, float]:
     }
 
 
-def render_frame(source_file: Path, output_file: Path, bounds: dict[str, float]) -> None:
-    radar = pyart.io.read(str(source_file))
-
+def render_frame(radar, output_file: Path, bounds: dict[str, float]) -> None:
     fig = plt.figure(figsize=(8, 8), dpi=256, facecolor=(0, 0, 0, 0))
     ax = fig.add_axes([0, 0, 1, 1], projection=ccrs.PlateCarree())
     ax.set_facecolor((0, 0, 0, 0))
     ax.axis("off")
 
-    display = pyart.graph.RadarMapDisplay(radar)
-    display.plot_ppi_map(
-        "reflectivity",
-        sweep=0,
-        ax=ax,
-        projection=ccrs.PlateCarree(),
+    sweep = 0
+    slc = radar.get_slice(sweep)
+    gate_lon = radar.gate_longitude["data"][slc]
+    gate_lat = radar.gate_latitude["data"][slc]
+    reflectivity = radar.fields["reflectivity"]["data"][slc]
+
+    # Draw directly from the true gate lon/lat grid so the exported image and
+    # manifest bounds live in the same coordinate space MapKit expects.
+    ax.pcolormesh(
+        gate_lon,
+        gate_lat,
+        reflectivity,
+        transform=ccrs.PlateCarree(),
         cmap="pyart_NWSRef",
         vmin=-10,
         vmax=75,
-        min_lon=bounds["west"],
-        max_lon=bounds["east"],
-        min_lat=bounds["south"],
-        max_lat=bounds["north"],
-        lon_lines=[],
-        lat_lines=[],
-        embellish=False,
-        colorbar_flag=False,
-        title_flag=False,
+        shading="nearest",
     )
     ax.set_extent(
         [bounds["west"], bounds["east"], bounds["south"], bounds["north"]],
@@ -169,12 +166,12 @@ def main() -> None:
             print(f"Downloading {obj.key}")
             download_object(obj.key, src)
 
-            radar = pyart.io.read(str(src))
+            radar = pyart.io.read_nexrad_archive(str(src))
             if manifest_bounds is None:
                 manifest_bounds = compute_bounds(radar)
 
             print(f"Rendering {out.name}")
-            render_frame(src, out, manifest_bounds)
+            render_frame(radar, out, manifest_bounds)
 
             manifest_frames.append({
                 "file": out.name,
