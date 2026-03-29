@@ -156,6 +156,18 @@ def alpha_crop_box(image_path: Path) -> tuple[int, int, int, int] | None:
         image.close()
 
 
+def union_crop_boxes(
+    boxes: list[tuple[int, int, int, int]],
+) -> tuple[int, int, int, int] | None:
+    if not boxes:
+        return None
+    left = min(box[0] for box in boxes)
+    top = min(box[1] for box in boxes)
+    right = max(box[2] for box in boxes)
+    bottom = max(box[3] for box in boxes)
+    return (left, top, right, bottom)
+
+
 def crop_frame(image_path: Path, crop_box: tuple[int, int, int, int]) -> None:
     image = Image.open(image_path).convert("RGBA")
     try:
@@ -192,8 +204,9 @@ def main() -> None:
 
     manifest_frames: list[dict] = []
     manifest_bounds: dict[str, float] | None = None
-    crop_box: tuple[int, int, int, int] | None = None
     source_image_size: tuple[int, int] | None = None
+    rendered_paths: list[Path] = []
+    frame_crop_boxes: list[tuple[int, int, int, int]] = []
 
     with tempfile.TemporaryDirectory(prefix="ccw_app_radar_") as tmp:
         tmpdir = Path(tmp)
@@ -211,15 +224,14 @@ def main() -> None:
             print(f"Rendering {out.name}")
             render_frame(radar, out, manifest_bounds)
 
-            if crop_box is None:
+            if source_image_size is None:
                 with Image.open(out) as image:
                     source_image_size = image.size
-                crop_box = alpha_crop_box(out)
-                if crop_box and source_image_size:
-                    manifest_bounds = adjust_bounds_for_crop(manifest_bounds, crop_box, source_image_size)
 
+            crop_box = alpha_crop_box(out)
             if crop_box:
-                crop_frame(out, crop_box)
+                frame_crop_boxes.append(crop_box)
+            rendered_paths.append(out)
 
             manifest_frames.append({
                 "file": out.name,
@@ -228,6 +240,14 @@ def main() -> None:
 
     if manifest_bounds is None:
         raise SystemExit("No radar bounds computed.")
+    if source_image_size is None:
+        raise SystemExit("No radar image size computed.")
+
+    crop_box = union_crop_boxes(frame_crop_boxes)
+    if crop_box:
+        manifest_bounds = adjust_bounds_for_crop(manifest_bounds, crop_box, source_image_size)
+        for path in rendered_paths:
+            crop_frame(path, crop_box)
 
     payload = {
         "site": SITE,
