@@ -41,6 +41,7 @@ SITE = os.environ.get("RADAR_SITE", "KBOX")
 FRAME_COUNT = int(os.environ.get("RADAR_FRAME_COUNT", "12"))
 BUCKET = os.environ.get("NEXRAD_BUCKET", "unidata-nexrad-level2")
 OUT_DIR = Path(os.environ.get("APP_RADAR_OUTPUT_DIR", "output"))
+DISPLAY_CRS = ccrs.epsg(3857)
 
 @dataclass
 class RadarObject:
@@ -113,7 +114,7 @@ def compute_bounds(radar) -> dict[str, float]:
 
 def render_frame(radar, output_file: Path, bounds: dict[str, float]) -> None:
     fig = plt.figure(figsize=(8, 8), dpi=256, facecolor=(0, 0, 0, 0))
-    ax = fig.add_axes([0, 0, 1, 1], projection=ccrs.PlateCarree())
+    ax = fig.add_axes([0, 0, 1, 1], projection=DISPLAY_CRS)
     ax.set_facecolor((0, 0, 0, 0))
     ax.axis("off")
 
