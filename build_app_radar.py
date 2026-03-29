@@ -30,6 +30,7 @@ try:
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     import pyart
+    from PIL import Image
 except Exception as exc:  # pragma: no cover
     raise SystemExit(
         "Missing radar rendering dependencies. Install requirements.txt first."
@@ -147,6 +148,41 @@ def render_frame(radar, output_file: Path, bounds: dict[str, float]) -> None:
     plt.close(fig)
 
 
+def alpha_crop_box(image_path: Path) -> tuple[int, int, int, int] | None:
+    image = Image.open(image_path).convert("RGBA")
+    try:
+        return image.getchannel("A").getbbox()
+    finally:
+        image.close()
+
+
+def crop_frame(image_path: Path, crop_box: tuple[int, int, int, int]) -> None:
+    image = Image.open(image_path).convert("RGBA")
+    try:
+        image.crop(crop_box).save(image_path)
+    finally:
+        image.close()
+
+
+def adjust_bounds_for_crop(
+    bounds: dict[str, float],
+    crop_box: tuple[int, int, int, int],
+    image_size: tuple[int, int],
+) -> dict[str, float]:
+    width, height = image_size
+    left, top, right, bottom = crop_box
+
+    lon_span = bounds["east"] - bounds["west"]
+    lat_span = bounds["north"] - bounds["south"]
+
+    return {
+        "west": bounds["west"] + lon_span * (left / width),
+        "east": bounds["west"] + lon_span * (right / width),
+        "north": bounds["north"] - lat_span * (top / height),
+        "south": bounds["north"] - lat_span * (bottom / height),
+    }
+
+
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -156,6 +192,8 @@ def main() -> None:
 
     manifest_frames: list[dict] = []
     manifest_bounds: dict[str, float] | None = None
+    crop_box: tuple[int, int, int, int] | None = None
+    source_image_size: tuple[int, int] | None = None
 
     with tempfile.TemporaryDirectory(prefix="ccw_app_radar_") as tmp:
         tmpdir = Path(tmp)
@@ -172,6 +210,16 @@ def main() -> None:
 
             print(f"Rendering {out.name}")
             render_frame(radar, out, manifest_bounds)
+
+            if crop_box is None:
+                with Image.open(out) as image:
+                    source_image_size = image.size
+                crop_box = alpha_crop_box(out)
+                if crop_box and source_image_size:
+                    manifest_bounds = adjust_bounds_for_crop(manifest_bounds, crop_box, source_image_size)
+
+            if crop_box:
+                crop_frame(out, crop_box)
 
             manifest_frames.append({
                 "file": out.name,
