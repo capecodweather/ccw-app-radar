@@ -19,7 +19,6 @@ import tempfile
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Iterable
 
 import boto3
 from botocore import UNSIGNED
@@ -41,15 +40,6 @@ SITE = os.environ.get("RADAR_SITE", "KBOX")
 FRAME_COUNT = int(os.environ.get("RADAR_FRAME_COUNT", "12"))
 BUCKET = os.environ.get("NEXRAD_BUCKET", "unidata-nexrad-level2")
 OUT_DIR = Path(os.environ.get("APP_RADAR_OUTPUT_DIR", "output"))
-
-# Cape Cod-focused extent for app overlay use.
-BOUNDS = {
-    "north": 42.45,
-    "south": 41.10,
-    "east": -69.35,
-    "west": -71.35,
-}
-
 
 @dataclass
 class RadarObject:
@@ -98,7 +88,29 @@ def download_object(key: str, destination: Path) -> None:
     client.download_file(BUCKET, key, str(destination))
 
 
-def render_frame(source_file: Path, output_file: Path) -> None:
+def compute_bounds(radar) -> dict[str, float]:
+    gate_lat = radar.gate_latitude["data"]
+    gate_lon = radar.gate_longitude["data"]
+
+    if hasattr(gate_lat, "compressed"):
+        lat_values = gate_lat.compressed()
+    else:
+        lat_values = gate_lat.ravel()
+
+    if hasattr(gate_lon, "compressed"):
+        lon_values = gate_lon.compressed()
+    else:
+        lon_values = gate_lon.ravel()
+
+    return {
+        "north": float(lat_values.max()),
+        "south": float(lat_values.min()),
+        "east": float(lon_values.max()),
+        "west": float(lon_values.min()),
+    }
+
+
+def render_frame(source_file: Path, output_file: Path, bounds: dict[str, float]) -> None:
     radar = pyart.io.read(str(source_file))
 
     fig = plt.figure(figsize=(8, 8), dpi=256, facecolor=(0, 0, 0, 0))
@@ -115,10 +127,10 @@ def render_frame(source_file: Path, output_file: Path) -> None:
         cmap="pyart_NWSRef",
         vmin=-10,
         vmax=75,
-        min_lon=BOUNDS["west"],
-        max_lon=BOUNDS["east"],
-        min_lat=BOUNDS["south"],
-        max_lat=BOUNDS["north"],
+        min_lon=bounds["west"],
+        max_lon=bounds["east"],
+        min_lat=bounds["south"],
+        max_lat=bounds["north"],
         lon_lines=[],
         lat_lines=[],
         embellish=False,
@@ -126,7 +138,7 @@ def render_frame(source_file: Path, output_file: Path) -> None:
         title_flag=False,
     )
     ax.set_extent(
-        [BOUNDS["west"], BOUNDS["east"], BOUNDS["south"], BOUNDS["north"]],
+        [bounds["west"], bounds["east"], bounds["south"], bounds["north"]],
         crs=ccrs.PlateCarree(),
     )
 
@@ -138,16 +150,6 @@ def render_frame(source_file: Path, output_file: Path) -> None:
     plt.close(fig)
 
 
-def write_manifest(frames: Iterable[dict], destination: Path) -> None:
-    payload = {
-        "site": SITE,
-        "generated_at": utcnow().isoformat().replace("+00:00", "Z"),
-        "bounds": BOUNDS,
-        "frames": list(frames),
-    }
-    destination.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-
-
 def main() -> None:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -156,6 +158,7 @@ def main() -> None:
         raise SystemExit("No recent radar objects found.")
 
     manifest_frames: list[dict] = []
+    manifest_bounds: dict[str, float] | None = None
 
     with tempfile.TemporaryDirectory(prefix="ccw_app_radar_") as tmp:
         tmpdir = Path(tmp)
@@ -166,15 +169,28 @@ def main() -> None:
             print(f"Downloading {obj.key}")
             download_object(obj.key, src)
 
+            radar = pyart.io.read(str(src))
+            if manifest_bounds is None:
+                manifest_bounds = compute_bounds(radar)
+
             print(f"Rendering {out.name}")
-            render_frame(src, out)
+            render_frame(src, out, manifest_bounds)
 
             manifest_frames.append({
                 "file": out.name,
                 "timestamp": obj.timestamp.isoformat().replace("+00:00", "Z"),
             })
 
-    write_manifest(manifest_frames, OUT_DIR / "manifest.json")
+    if manifest_bounds is None:
+        raise SystemExit("No radar bounds computed.")
+
+    payload = {
+        "site": SITE,
+        "generated_at": utcnow().isoformat().replace("+00:00", "Z"),
+        "bounds": manifest_bounds,
+        "frames": manifest_frames,
+    }
+    (OUT_DIR / "manifest.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print(f"Wrote {len(manifest_frames)} frames to {OUT_DIR}")
 
 
