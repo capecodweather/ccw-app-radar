@@ -14,6 +14,7 @@ The existing website radar pipeline should remain separate.
 from __future__ import annotations
 
 import json
+import math
 import os
 import tempfile
 from dataclasses import dataclass
@@ -25,7 +26,6 @@ from botocore import UNSIGNED
 from botocore.client import Config
 
 try:
-    import cartopy.crs as ccrs
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -41,7 +41,7 @@ SITE = os.environ.get("RADAR_SITE", "KBOX")
 FRAME_COUNT = int(os.environ.get("RADAR_FRAME_COUNT", "12"))
 BUCKET = os.environ.get("NEXRAD_BUCKET", "unidata-nexrad-level2")
 OUT_DIR = Path(os.environ.get("APP_RADAR_OUTPUT_DIR", "output"))
-DISPLAY_CRS = ccrs.epsg(3857)
+WEB_MERCATOR_LIMIT = 85.05112878
 
 @dataclass
 class RadarObject:
@@ -114,7 +114,7 @@ def compute_bounds(radar) -> dict[str, float]:
 
 def render_frame(radar, output_file: Path, bounds: dict[str, float]) -> None:
     fig = plt.figure(figsize=(8, 8), dpi=256, facecolor=(0, 0, 0, 0))
-    ax = fig.add_axes([0, 0, 1, 1], projection=DISPLAY_CRS)
+    ax = fig.add_axes([0, 0, 1, 1])
     ax.set_facecolor((0, 0, 0, 0))
     ax.axis("off")
 
@@ -124,22 +124,24 @@ def render_frame(radar, output_file: Path, bounds: dict[str, float]) -> None:
     gate_lat = radar.gate_latitude["data"][slc]
     reflectivity = radar.fields["reflectivity"]["data"][slc]
 
-    # Draw directly from the true gate lon/lat grid so the exported image and
-    # manifest bounds live in the same coordinate space MapKit expects.
+    mercator_x, mercator_y = lonlat_to_web_mercator(gate_lon, gate_lat)
+    west_x, south_y = lonlat_to_web_mercator(bounds["west"], bounds["south"])
+    east_x, north_y = lonlat_to_web_mercator(bounds["east"], bounds["north"])
+
+    # Render directly in Web Mercator so the exported raster matches the map
+    # projection MapKit uses without pulling in cartopy/geospatial system libs.
     ax.pcolormesh(
-        gate_lon,
-        gate_lat,
+        mercator_x,
+        mercator_y,
         reflectivity,
-        transform=ccrs.PlateCarree(),
         cmap="pyart_NWSRef",
         vmin=-10,
         vmax=75,
         shading="nearest",
     )
-    ax.set_extent(
-        [bounds["west"], bounds["east"], bounds["south"], bounds["north"]],
-        crs=ccrs.PlateCarree(),
-    )
+    ax.set_xlim(west_x, east_x)
+    ax.set_ylim(south_y, north_y)
+    ax.set_aspect("equal")
 
     fig.savefig(
         output_file,
@@ -147,6 +149,26 @@ def render_frame(radar, output_file: Path, bounds: dict[str, float]) -> None:
         pad_inches=0,
     )
     plt.close(fig)
+
+
+def lonlat_to_web_mercator(lon, lat):
+    lat = clamp_latitude(lat)
+    x = lon * 20037508.34 / 180.0
+    y = log_tan_mercator(lat)
+    return x, y
+
+
+def clamp_latitude(lat):
+    if hasattr(lat, "clip"):
+        return lat.clip(-WEB_MERCATOR_LIMIT, WEB_MERCATOR_LIMIT)
+    return max(min(lat, WEB_MERCATOR_LIMIT), -WEB_MERCATOR_LIMIT)
+
+
+def log_tan_mercator(lat):
+    if hasattr(lat, "__array__"):
+        import numpy as np
+        return np.log(np.tan((90.0 + lat) * math.pi / 360.0)) * (20037508.34 / math.pi)
+    return math.log(math.tan((90.0 + lat) * math.pi / 360.0)) * (20037508.34 / math.pi)
 
 
 def alpha_crop_box(image_path: Path) -> tuple[int, int, int, int] | None:

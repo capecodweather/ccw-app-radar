@@ -23,21 +23,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
-      - name: Install system packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            gfortran \
-            libproj-dev \
-            proj-data \
-            proj-bin \
-            libgeos-dev \
-            libopenjp2-7-dev \
-            libatlas-base-dev \
-            libbz2-dev \
-            liblzma-dev \
-            libcurl4-openssl-dev
+          cache: "pip"
 
       - name: Install Python dependencies
         run: |
