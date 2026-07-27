@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-07-27T13:17:03.771684Z",
+  "generated_at": "2026-07-27T13:19:54.816365Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-07-27T13:16:40Z",
+  "latest_valid_time": "2026-07-27T13:19:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 1,
+  "feature_count": 2,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,10 +26,27 @@
       },
       "properties": {
         "valid_time": "2026-07-27T13:16:00Z",
-        "age_minutes": 1.1,
+        "age_minutes": 3.9,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262081315400_e20262081316000_c20262081316017.nc",
         "energy_j": 2.302842161752694e-13,
         "area_m2": 675110656.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.64027,
+          37.96161
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-07-27T13:18:00Z",
+        "age_minutes": 1.9,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262081317400_e20262081318000_c20262081318020.nc",
+        "energy_j": 1.292846309609158e-13,
+        "area_m2": 405615744.0
       }
     }
   ]
