@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-01T20:48:28.427107Z",
+  "generated_at": "2026-08-01T20:50:24.811622Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-01T20:48:00Z",
+  "latest_valid_time": "2026-08-01T20:50:00Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-08-01T20:42:20Z",
-        "age_minutes": 6.1,
+        "age_minutes": 8.1,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262132042000_e20262132042200_c20262132042217.nc",
         "energy_j": 1.928507334836467e-14,
         "area_m2": 72943688.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-08-01T20:43:00Z",
-        "age_minutes": 5.5,
+        "age_minutes": 7.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262132042400_e20262132043000_c20262132043019.nc",
         "energy_j": 4.928495084917037e-14,
         "area_m2": 218678464.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-08-01T20:44:00Z",
-        "age_minutes": 4.5,
+        "age_minutes": 6.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262132043400_e20262132044000_c20262132044019.nc",
         "energy_j": 5.728491953797127e-14,
         "area_m2": 218678464.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.59241,
+          38.46738
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-01T20:49:00Z",
+        "age_minutes": 1.4,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262132048400_e20262132049000_c20262132049017.nc",
+        "energy_j": 5.828491985923612e-14,
+        "area_m2": 136731264.0
       }
     }
   ]
