@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-03T16:17:12.292224Z",
+  "generated_at": "2026-08-03T16:19:47.822023Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-03T16:17:00Z",
+  "latest_valid_time": "2026-08-03T16:19:20Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-08-03T16:13:40Z",
-        "age_minutes": 3.5,
+        "age_minutes": 6.1,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262151613200_e20262151613400_c20262151613416.nc",
         "energy_j": 4.828495391603731e-14,
         "area_m2": 338165728.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-08-03T16:16:40Z",
-        "age_minutes": 0.5,
+        "age_minutes": 3.1,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262151616200_e20262151616400_c20262151616416.nc",
         "energy_j": 4.285133750928875e-15,
         "area_m2": 68365632.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-08-03T16:16:40Z",
-        "age_minutes": 0.5,
+        "age_minutes": 3.1,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262151616200_e20262151616400_c20262151616416.nc",
         "energy_j": 3.5285007337834684e-14,
         "area_m2": 338318336.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.5939,
+          43.00393
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-03T16:19:00Z",
+        "age_minutes": 0.8,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262151618400_e20262151619000_c20262151619012.nc",
+        "energy_j": 2.5285049864965346e-14,
+        "area_m2": 137341680.0
       }
     }
   ]
