@@ -2,9 +2,9 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-05T07:23:31.488952Z",
+  "generated_at": "2026-08-05T07:25:03.225743Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-05T07:23:20Z",
+  "latest_valid_time": "2026-08-05T07:24:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
@@ -12,7 +12,9 @@
     "north": 45.92394244189266
   },
   "feature_count": 0,
-  "errors": [],
+  "errors": [
+    "OR_GLM-L2-LCFA_G19_s20262170712200_e20262170712400_c20262170712422.nc: HTTP Error 500: Internal Server Error"
+  ],
   "type": "FeatureCollection",
   "features": []
 }
