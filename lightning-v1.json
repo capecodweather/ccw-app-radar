@@ -2,36 +2,19 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-06T02:24:58.584749Z",
+  "generated_at": "2026-08-06T02:27:12.005581Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-06T02:24:40Z",
+  "latest_valid_time": "2026-08-06T02:27:00Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 4,
+  "feature_count": 3,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.21664,
-          40.18183
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-06T02:16:40Z",
-        "age_minutes": 8.3,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262180216200_e20262180216400_c20262180216413.nc",
-        "energy_j": 6.372825986540598e-13,
-        "area_m2": 920036608.0
-      }
-    },
     {
       "type": "Feature",
       "geometry": {
@@ -43,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-08-06T02:17:40Z",
-        "age_minutes": 7.3,
+        "age_minutes": 9.5,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262180217200_e20262180217400_c20262180217414.nc",
         "energy_j": 1.5128454316105239e-13,
         "area_m2": 1715397504.0
@@ -60,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-08-06T02:19:20Z",
-        "age_minutes": 5.6,
+        "age_minutes": 7.9,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262180219000_e20262180219200_c20262180219213.nc",
         "energy_j": 5.742262134539322e-12,
         "area_m2": 4318937600.0
@@ -77,7 +60,7 @@
       },
       "properties": {
         "valid_time": "2026-08-06T02:24:20Z",
-        "age_minutes": 0.6,
+        "age_minutes": 2.9,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262180224000_e20262180224200_c20262180224216.nc",
         "energy_j": 5.332829989233845e-13,
         "area_m2": 638944000.0
