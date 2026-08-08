@@ -2,53 +2,19 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-08T12:31:36.149135Z",
+  "generated_at": "2026-08-08T12:33:02.287910Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-08T12:31:20Z",
+  "latest_valid_time": "2026-08-08T12:32:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 9,
+  "feature_count": 8,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -68.84775,
-          44.39037
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-08T12:21:40Z",
-        "age_minutes": 9.9,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262201221200_e20262201221400_c20262201221424.nc",
-        "energy_j": 1.296279923679311e-12,
-        "area_m2": 854417792.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -68.02255,
-          43.01854
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-08T12:23:00Z",
-        "age_minutes": 8.6,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262201222400_e20262201223000_c20262201223021.nc",
-        "energy_j": 2.5572749213359502e-12,
-        "area_m2": 1999694720.0
-      }
-    },
     {
       "type": "Feature",
       "geometry": {
@@ -60,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-08-08T12:23:40Z",
-        "age_minutes": 7.9,
+        "age_minutes": 9.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262201223200_e20262201223400_c20262201223421.nc",
         "energy_j": 3.4128377749721717e-13,
         "area_m2": 427285216.0
@@ -77,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-08-08T12:26:00Z",
-        "age_minutes": 5.6,
+        "age_minutes": 7.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262201225400_e20262201226000_c20262201226020.nc",
         "energy_j": 2.2022763387224975e-12,
         "area_m2": 1439798528.0
@@ -94,7 +60,7 @@
       },
       "properties": {
         "valid_time": "2026-08-08T12:26:00Z",
-        "age_minutes": 5.6,
+        "age_minutes": 7.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262201225400_e20262201226000_c20262201226020.nc",
         "energy_j": 3.642836900186186e-13,
         "area_m2": 427437824.0
@@ -111,7 +77,7 @@
       },
       "properties": {
         "valid_time": "2026-08-08T12:28:00Z",
-        "age_minutes": 3.6,
+        "age_minutes": 5.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262201227400_e20262201228000_c20262201228023.nc",
         "energy_j": 1.5682788184409602e-12,
         "area_m2": 1150617984.0
@@ -128,7 +94,7 @@
       },
       "properties": {
         "valid_time": "2026-08-08T12:29:40Z",
-        "age_minutes": 1.9,
+        "age_minutes": 3.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262201229200_e20262201229400_c20262201229420.nc",
         "energy_j": 1.1812804423874668e-12,
         "area_m2": 705478400.0
@@ -145,7 +111,7 @@
       },
       "properties": {
         "valid_time": "2026-08-08T12:29:40Z",
-        "age_minutes": 1.9,
+        "age_minutes": 3.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262201229200_e20262201229400_c20262201229420.nc",
         "energy_j": 3.028502944843296e-14,
         "area_m2": 215779024.0
@@ -162,10 +128,27 @@
       },
       "properties": {
         "valid_time": "2026-08-08T12:29:40Z",
-        "age_minutes": 1.9,
+        "age_minutes": 3.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262201229200_e20262201229400_c20262201229420.nc",
         "energy_j": 7.592820686422308e-13,
         "area_m2": 712498112.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.75957,
+          44.14796
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-08T12:31:40Z",
+        "age_minutes": 1.4,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262201231200_e20262201231400_c20262201231419.nc",
+        "energy_j": 1.2285101592696829e-14,
+        "area_m2": 70807264.0
       }
     }
   ]
