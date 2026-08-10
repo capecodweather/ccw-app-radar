@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-10T02:25:09.319973Z",
+  "generated_at": "2026-08-10T02:27:40.830137Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-10T02:25:00Z",
+  "latest_valid_time": "2026-08-10T02:27:20Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 2,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-08-10T02:20:00Z",
-        "age_minutes": 5.2,
+        "age_minutes": 7.7,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262220219400_e20262220220000_c20262220220023.nc",
         "energy_j": 1.7128445471865927e-13,
         "area_m2": 275293760.0
@@ -43,10 +43,44 @@
       },
       "properties": {
         "valid_time": "2026-08-10T02:21:40Z",
-        "age_minutes": 3.5,
+        "age_minutes": 6.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262220221200_e20262220221400_c20262220221420.nc",
         "energy_j": 5.285129837028987e-15,
         "area_m2": 206470320.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.35315,
+          38.39338
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-10T02:25:20Z",
+        "age_minutes": 2.3,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262220225000_e20262220225200_c20262220225222.nc",
+        "energy_j": 3.212838523870831e-13,
+        "area_m2": 344117184.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.60179,
+          38.2327
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-10T02:25:20Z",
+        "age_minutes": 2.3,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262220225000_e20262220225200_c20262220225222.nc",
+        "energy_j": 1.2228465581711617e-13,
+        "area_m2": 961086528.0
       }
     }
   ]
