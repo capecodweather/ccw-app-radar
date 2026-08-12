@@ -2,17 +2,35 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-12T01:49:02.388350Z",
+  "generated_at": "2026-08-12T01:51:15.130971Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-12T01:48:40Z",
+  "latest_valid_time": "2026-08-12T01:50:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 0,
+  "feature_count": 1,
   "errors": [],
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.35043,
+          45.33681
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-12T01:50:00Z",
+        "age_minutes": 1.3,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262240149400_e20262240150000_c20262240150019.nc",
+        "energy_j": 1.1285106353629663e-14,
+        "area_m2": 72791088.0
+      }
+    }
+  ]
 }
