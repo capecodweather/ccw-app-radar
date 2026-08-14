@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-14T03:25:02.558099Z",
+  "generated_at": "2026-08-14T03:26:28.601714Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-14T03:24:40Z",
+  "latest_valid_time": "2026-08-14T03:26:20Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-08-14T03:22:00Z",
-        "age_minutes": 3.0,
+        "age_minutes": 4.5,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262260321400_e20262260322000_c20262260322016.nc",
         "energy_j": 1.672844805386542e-13,
         "area_m2": 289333120.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-08-14T03:22:20Z",
-        "age_minutes": 2.7,
+        "age_minutes": 4.1,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262260322000_e20262260322200_c20262260322217.nc",
         "energy_j": 9.528476911570966e-14,
         "area_m2": 508927200.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-08-14T03:24:40Z",
-        "age_minutes": 0.4,
+        "age_minutes": 1.8,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262260324200_e20262260324400_c20262260324417.nc",
         "energy_j": 7.328485691557307e-14,
         "area_m2": 291164352.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.43607,
+          39.09888
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-14T03:26:20Z",
+        "age_minutes": 0.1,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262260326000_e20262260326200_c20262260326216.nc",
+        "energy_j": 5.228493826043776e-14,
+        "area_m2": 69739048.0
       }
     }
   ]
