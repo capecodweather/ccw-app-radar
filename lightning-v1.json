@@ -2,9 +2,9 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-19T09:09:03.242434Z",
+  "generated_at": "2026-08-19T09:11:19.805630Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-19T09:08:40Z",
+  "latest_valid_time": "2026-08-19T09:11:00Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
@@ -12,7 +12,9 @@
     "north": 45.92394244189266
   },
   "feature_count": 0,
-  "errors": [],
+  "errors": [
+    "OR_GLM-L2-LCFA_G19_s20262310901200_e20262310901400_c20262310901414.nc: HTTP Error 503: Service Unavailable"
+  ],
   "type": "FeatureCollection",
   "features": []
 }
