@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-22T22:37:07.188413Z",
+  "generated_at": "2026-08-22T22:38:19.510453Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-22T22:36:40Z",
+  "latest_valid_time": "2026-08-22T22:37:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-08-22T22:32:00Z",
-        "age_minutes": 5.1,
+        "age_minutes": 6.3,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262342231400_e20262342232000_c20262342232017.nc",
         "energy_j": 1.0028475039324317e-13,
         "area_m2": 272394304.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-08-22T22:34:00Z",
-        "age_minutes": 3.1,
+        "age_minutes": 4.3,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262342233400_e20262342234000_c20262342234018.nc",
         "energy_j": 2.328505769276512e-14,
         "area_m2": 136273456.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-08-22T22:36:00Z",
-        "age_minutes": 1.1,
+        "age_minutes": 2.3,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262342235400_e20262342236000_c20262342236016.nc",
         "energy_j": 1.162846809945814e-13,
         "area_m2": 204333888.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.32378,
+          37.93977
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-22T22:37:00Z",
+        "age_minutes": 1.3,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262342236400_e20262342237000_c20262342237015.nc",
+        "energy_j": 2.2528424167399946e-13,
+        "area_m2": 408667776.0
       }
     }
   ]
