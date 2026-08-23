@@ -2,104 +2,19 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-23T11:20:42.595711Z",
+  "generated_at": "2026-08-23T11:23:08.900328Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-23T11:20:20Z",
+  "latest_valid_time": "2026-08-23T11:22:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 7,
+  "feature_count": 3,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -66.40675,
-          40.5107
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-23T11:11:00Z",
-        "age_minutes": 9.7,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262351110400_e20262351111000_c20262351111016.nc",
-        "energy_j": 9.428477557070838e-14,
-        "area_m2": 359224768.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -67.48492,
-          40.66311
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-23T11:11:00Z",
-        "age_minutes": 9.7,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262351110400_e20262351111000_c20262351111016.nc",
-        "energy_j": 1.4282793697750762e-12,
-        "area_m2": 1007782656.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -67.45908,
-          40.71155
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-23T11:12:00Z",
-        "age_minutes": 8.7,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262351111400_e20262351112000_c20262351112016.nc",
-        "energy_j": 4.1328347536763455e-13,
-        "area_m2": 504654336.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -68.27811,
-          38.47438
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-23T11:12:20Z",
-        "age_minutes": 8.4,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262351112000_e20262351112200_c20262351112217.nc",
-        "energy_j": 1.452845683385176e-13,
-        "area_m2": 824965632.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.88302,
-          40.84657
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-23T11:13:00Z",
-        "age_minutes": 7.7,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262351112400_e20262351113000_c20262351113017.nc",
-        "energy_j": 9.10281507289501e-13,
-        "area_m2": 575003776.0
-      }
-    },
     {
       "type": "Feature",
       "geometry": {
@@ -111,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-08-23T11:15:40Z",
-        "age_minutes": 5.0,
+        "age_minutes": 7.5,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262351115200_e20262351115400_c20262351115418.nc",
         "energy_j": 5.732828491436526e-13,
         "area_m2": 575003776.0
@@ -128,10 +43,27 @@
       },
       "properties": {
         "valid_time": "2026-08-23T11:20:20Z",
-        "age_minutes": 0.4,
+        "age_minutes": 2.8,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262351120000_e20262351120200_c20262351120218.nc",
         "energy_j": 3.8428358802369833e-13,
         "area_m2": 503280928.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.3265,
+          38.90409
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-23T11:21:20Z",
+        "age_minutes": 1.8,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262351121000_e20262351121200_c20262351121219.nc",
+        "energy_j": 1.6128449216359225e-13,
+        "area_m2": 553792128.0
       }
     }
   ]
