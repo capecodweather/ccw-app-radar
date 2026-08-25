@@ -2,70 +2,19 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-25T14:09:02.287479Z",
+  "generated_at": "2026-08-25T14:11:33.889399Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-25T14:08:40Z",
+  "latest_valid_time": "2026-08-25T14:11:20Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 8,
+  "feature_count": 6,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -66.81596,
-          43.32721
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-25T13:59:20Z",
-        "age_minutes": 9.7,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262371359000_e20262371359200_c20262371359216.nc",
-        "energy_j": 2.112842913864002e-13,
-        "area_m2": 417060896.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -66.77189,
-          43.24493
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-25T14:00:00Z",
-        "age_minutes": 9.0,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262371359400_e20262371400000_c20262371400016.nc",
-        "energy_j": 2.1792762906758245e-12,
-        "area_m2": 833511360.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -66.82687,
-          43.35414
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-08-25T14:01:00Z",
-        "age_minutes": 8.0,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262371400400_e20262371401000_c20262371401017.nc",
-        "energy_j": 1.7728442954119406e-13,
-        "area_m2": 208759344.0
-      }
-    },
     {
       "type": "Feature",
       "geometry": {
@@ -77,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-08-25T14:02:20Z",
-        "age_minutes": 6.7,
+        "age_minutes": 9.2,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262371402000_e20262371402200_c20262371402216.nc",
         "energy_j": 1.4028458028472052e-13,
         "area_m2": 208759344.0
@@ -94,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-08-25T14:03:20Z",
-        "age_minutes": 5.7,
+        "age_minutes": 8.2,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262371403000_e20262371403200_c20262371403216.nc",
         "energy_j": 1.272846303183861e-13,
         "area_m2": 208759344.0
@@ -111,7 +60,7 @@
       },
       "properties": {
         "valid_time": "2026-08-25T14:04:40Z",
-        "age_minutes": 4.4,
+        "age_minutes": 6.9,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262371404200_e20262371404400_c20262371404422.nc",
         "energy_j": 1.322846183721832e-13,
         "area_m2": 278651008.0
@@ -128,7 +77,7 @@
       },
       "properties": {
         "valid_time": "2026-08-25T14:05:20Z",
-        "age_minutes": 3.7,
+        "age_minutes": 6.2,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262371405000_e20262371405200_c20262371405216.nc",
         "energy_j": 1.7285081176164445e-14,
         "area_m2": 139172896.0
@@ -145,10 +94,27 @@
       },
       "properties": {
         "valid_time": "2026-08-25T14:07:40Z",
-        "age_minutes": 1.4,
+        "age_minutes": 3.9,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262371407200_e20262371407400_c20262371407416.nc",
         "energy_j": 1.9862772451112454e-12,
         "area_m2": 835037376.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.73794,
+          43.41079
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-25T14:11:20Z",
+        "age_minutes": 0.2,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262371411000_e20262371411200_c20262371411215.nc",
+        "energy_j": 3.682836641986237e-13,
+        "area_m2": 348390048.0
       }
     }
   ]
