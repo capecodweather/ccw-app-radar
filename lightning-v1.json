@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-08-27T09:09:03.503611Z",
+  "generated_at": "2026-08-27T09:10:00.344777Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-08-27T09:08:40Z",
+  "latest_valid_time": "2026-08-27T09:09:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-08-27T09:01:00Z",
-        "age_minutes": 8.1,
+        "age_minutes": 9.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262390900400_e20262390901000_c20262390901020.nc",
         "energy_j": 3.302838146208853e-13,
         "area_m2": 496413856.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-08-27T09:03:00Z",
-        "age_minutes": 6.1,
+        "age_minutes": 7.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262390902400_e20262390903000_c20262390903024.nc",
         "energy_j": 8.728480042690875e-14,
         "area_m2": 212726992.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-08-27T09:05:20Z",
-        "age_minutes": 3.7,
+        "age_minutes": 4.7,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262390905000_e20262390905200_c20262390905221.nc",
         "energy_j": 4.5284966504769916e-14,
         "area_m2": 212726992.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.23174,
+          40.259
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-08-27T09:09:40Z",
+        "age_minutes": 0.3,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262390909200_e20262390909400_c20262390909419.nc",
+        "energy_j": 2.5328412869667083e-13,
+        "area_m2": 567373696.0
       }
     }
   ]
