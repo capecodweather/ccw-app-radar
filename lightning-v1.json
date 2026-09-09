@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-09-09T22:38:01.915050Z",
+  "generated_at": "2026-09-09T22:40:19.354258Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-09-09T22:37:40Z",
+  "latest_valid_time": "2026-09-09T22:39:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-09-09T22:30:20Z",
-        "age_minutes": 7.7,
+        "age_minutes": 10.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262522230000_e20262522230200_c20262522230219.nc",
         "energy_j": 5.1284944715436487e-14,
         "area_m2": 207233328.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-09-09T22:34:20Z",
-        "age_minutes": 3.7,
+        "age_minutes": 6.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262522234000_e20262522234200_c20262522234218.nc",
         "energy_j": 9.1284788159441e-14,
         "area_m2": 206928128.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-09-09T22:35:40Z",
-        "age_minutes": 2.4,
+        "age_minutes": 4.7,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262522235200_e20262522235400_c20262522235416.nc",
         "energy_j": 1.5528451734105747e-13,
         "area_m2": 484816096.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.3953,
+          43.18474
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-09-09T22:39:00Z",
+        "age_minutes": 1.3,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262522238400_e20262522239000_c20262522239018.nc",
+        "energy_j": 4.672832758755019e-13,
+        "area_m2": 1103006208.0
       }
     }
   ]
