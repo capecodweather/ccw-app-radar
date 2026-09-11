@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-09-11T18:59:30.541760Z",
+  "generated_at": "2026-09-11T19:01:02.151567Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-09-11T18:59:20Z",
+  "latest_valid_time": "2026-09-11T19:00:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-09-11T18:52:00Z",
-        "age_minutes": 7.5,
+        "age_minutes": 9.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262541851400_e20262541852000_c20262541852016.nc",
         "energy_j": 1.028511026752955e-14,
         "area_m2": 203418272.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-09-11T18:54:00Z",
-        "age_minutes": 5.5,
+        "age_minutes": 7.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262541853400_e20262541854000_c20262541854015.nc",
         "energy_j": 1.4285093764897054e-14,
         "area_m2": 135357856.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-09-11T18:56:40Z",
-        "age_minutes": 2.8,
+        "age_minutes": 4.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262541856200_e20262541856400_c20262541856415.nc",
         "energy_j": 2.162842794401973e-13,
         "area_m2": 405920960.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.66223,
+          37.9677
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-09-11T18:59:40Z",
+        "age_minutes": 1.4,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262541859200_e20262541859400_c20262541859415.nc",
+        "energy_j": 4.672832758755019e-13,
+        "area_m2": 609186624.0
       }
     }
   ]
