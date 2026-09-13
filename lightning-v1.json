@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-09-13T13:58:39.399364Z",
+  "generated_at": "2026-09-13T14:00:30.444259Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-09-13T13:58:20Z",
+  "latest_valid_time": "2026-09-13T14:00:20Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-09-13T13:52:00Z",
-        "age_minutes": 6.7,
+        "age_minutes": 8.5,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262561351400_e20262561352000_c20262561352020.nc",
         "energy_j": 7.328485691557307e-14,
         "area_m2": 274988544.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-09-13T13:52:40Z",
-        "age_minutes": 6.0,
+        "age_minutes": 7.8,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262561352200_e20262561352400_c20262561352419.nc",
         "energy_j": 5.212830492783149e-13,
         "area_m2": 1596520704.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-09-13T13:55:00Z",
-        "age_minutes": 3.7,
+        "age_minutes": 5.5,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262561354400_e20262561355000_c20262561355021.nc",
         "energy_j": 4.285133750928875e-15,
         "area_m2": 71112464.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.42127,
+          41.61458
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-09-13T13:59:40Z",
+        "age_minutes": 0.8,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262561359200_e20262561359400_c20262561359425.nc",
+        "energy_j": 1.9522773155034034e-12,
+        "area_m2": 1331451264.0
       }
     }
   ]
