@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-09-14T02:40:24.894100Z",
+  "generated_at": "2026-09-14T02:43:12.927043Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-09-14T02:40:00Z",
+  "latest_valid_time": "2026-09-14T02:43:00Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-09-14T02:33:40Z",
-        "age_minutes": 6.7,
+        "age_minutes": 9.5,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262570233200_e20262570233400_c20262570233414.nc",
         "energy_j": 3.362837894434201e-13,
         "area_m2": 2242026496.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-09-14T02:35:40Z",
-        "age_minutes": 4.7,
+        "age_minutes": 7.5,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262570235200_e20262570235400_c20262570235416.nc",
         "energy_j": 2.8128400216681504e-13,
         "area_m2": 1751258880.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-09-14T02:38:00Z",
-        "age_minutes": 2.4,
+        "age_minutes": 5.2,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262570237400_e20262570238000_c20262570238015.nc",
         "energy_j": 2.1528427911893244e-13,
         "area_m2": 1751258880.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.85458,
+          44.67546
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-09-14T02:42:00Z",
+        "age_minutes": 1.2,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262570241400_e20262570242000_c20262570242014.nc",
+        "energy_j": 2.285142002245123e-15,
+        "area_m2": 71570272.0
       }
     }
   ]
