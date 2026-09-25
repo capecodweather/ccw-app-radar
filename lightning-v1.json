@@ -2,9 +2,9 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-09-25T07:32:24.256076Z",
+  "generated_at": "2026-09-25T07:33:28.124382Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-09-25T07:32:00Z",
+  "latest_valid_time": "2026-09-25T07:33:00Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
@@ -20,30 +20,13 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -65.91873,
-          38.32199
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-09-25T07:23:20Z",
-        "age_minutes": 9.1,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20262680723000_e20262680723200_c20262680723220.nc",
-        "energy_j": 6.128490727050351e-14,
-        "area_m2": 485121312.0
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -66.78635,
           37.97802
         ]
       },
       "properties": {
         "valid_time": "2026-09-25T07:28:00Z",
-        "age_minutes": 4.4,
+        "age_minutes": 5.5,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262680727400_e20262680728000_c20262680728021.nc",
         "energy_j": 3.2851378765869988e-15,
         "area_m2": 68670840.0
@@ -60,10 +43,27 @@
       },
       "properties": {
         "valid_time": "2026-09-25T07:28:40Z",
-        "age_minutes": 3.7,
+        "age_minutes": 4.8,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262680728200_e20262680728400_c20262680728420.nc",
         "energy_j": 3.372838033172121e-13,
         "area_m2": 962612544.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.28439,
+          38.03967
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-09-25T07:32:20Z",
+        "age_minutes": 1.1,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262680732000_e20262680732200_c20262680732220.nc",
+        "energy_j": 1.7428444212992666e-13,
+        "area_m2": 481916672.0
       }
     }
   ]
