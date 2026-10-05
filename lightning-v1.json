@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-10-05T19:10:04.810267Z",
+  "generated_at": "2026-10-05T19:12:09.525509Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-10-05T19:09:40Z",
+  "latest_valid_time": "2026-10-05T19:12:00Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-10-05T19:04:00Z",
-        "age_minutes": 6.1,
+        "age_minutes": 8.2,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262781903400_e20262781904000_c20262781904021.nc",
         "energy_j": 3.8628358866622803e-13,
         "area_m2": 366091872.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-10-05T19:06:00Z",
-        "age_minutes": 4.1,
+        "age_minutes": 6.2,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262781905400_e20262781906000_c20262781906018.nc",
         "energy_j": 7.028486950430568e-14,
         "area_m2": 215168624.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-10-05T19:09:00Z",
-        "age_minutes": 1.1,
+        "age_minutes": 3.2,
         "source_file": "OR_GLM-L2-LCFA_G19_s20262781908400_e20262781909000_c20262781909021.nc",
         "energy_j": 9.562812781221952e-13,
         "area_m2": 366091872.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.7827,
+          44.72432
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-10-05T19:10:00Z",
+        "age_minutes": 2.2,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20262781909400_e20262781910000_c20262781910018.nc",
+        "energy_j": 9.285114181429438e-15,
+        "area_m2": 72638488.0
       }
     }
   ]
