@@ -2,9 +2,9 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-10-27T17:36:14.452123Z",
+  "generated_at": "2026-10-27T17:38:20.799408Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-10-27T17:36:00Z",
+  "latest_valid_time": "2026-10-27T17:37:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
@@ -12,7 +12,9 @@
     "north": 45.92394244189266
   },
   "feature_count": 0,
-  "errors": [],
+  "errors": [
+    "OR_GLM-L2-LCFA_G19_s20263001737400_e20263001738000_c20263001738018.nc: <urlopen error [Errno 104] Connection reset by peer>"
+  ],
   "type": "FeatureCollection",
   "features": []
 }
