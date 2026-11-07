@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-11-07T18:46:09.111623Z",
+  "generated_at": "2026-11-07T18:48:06.560611Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-11-07T18:46:00Z",
+  "latest_valid_time": "2026-11-07T18:47:40Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 7,
+  "feature_count": 8,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-11-07T18:40:00Z",
-        "age_minutes": 6.2,
+        "age_minutes": 8.1,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263111839400_e20263111840000_c20263111840017.nc",
         "energy_j": 2.4128417905160127e-13,
         "area_m2": 1072791040.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-11-07T18:41:20Z",
-        "age_minutes": 4.8,
+        "age_minutes": 6.8,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263111841000_e20263111841200_c20263111841218.nc",
         "energy_j": 1.9528436756132556e-13,
         "area_m2": 929803136.0
@@ -60,7 +60,7 @@
       },
       "properties": {
         "valid_time": "2026-11-07T18:42:00Z",
-        "age_minutes": 4.2,
+        "age_minutes": 6.1,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263111841400_e20263111842000_c20263111842017.nc",
         "energy_j": 2.572841028766759e-13,
         "area_m2": 214558208.0
@@ -77,7 +77,7 @@
       },
       "properties": {
         "valid_time": "2026-11-07T18:42:40Z",
-        "age_minutes": 3.5,
+        "age_minutes": 5.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263111842200_e20263111842400_c20263111842422.nc",
         "energy_j": 6.822824098230706e-13,
         "area_m2": 571036160.0
@@ -94,7 +94,7 @@
       },
       "properties": {
         "valid_time": "2026-11-07T18:42:40Z",
-        "age_minutes": 3.5,
+        "age_minutes": 5.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263111842200_e20263111842400_c20263111842422.nc",
         "energy_j": 1.8528440500625853e-13,
         "area_m2": 562490432.0
@@ -111,7 +111,7 @@
       },
       "properties": {
         "valid_time": "2026-11-07T18:45:00Z",
-        "age_minutes": 1.2,
+        "age_minutes": 3.1,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263111844400_e20263111845000_c20263111845022.nc",
         "energy_j": 1.0082811321976415e-12,
         "area_m2": 1145124352.0
@@ -128,10 +128,27 @@
       },
       "properties": {
         "valid_time": "2026-11-07T18:45:40Z",
-        "age_minutes": 0.5,
+        "age_minutes": 2.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263111845200_e20263111845400_c20263111845418.nc",
         "energy_j": 2.0128434238386034e-13,
         "area_m2": 412177632.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.16209,
+          39.82792
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-11-07T18:46:40Z",
+        "age_minutes": 1.4,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20263111846200_e20263111846400_c20263111846420.nc",
+        "energy_j": 1.190280404621269e-12,
+        "area_m2": 571951744.0
       }
     }
   ]
