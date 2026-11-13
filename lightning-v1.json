@@ -2,16 +2,16 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-11-13T19:16:15.139594Z",
+  "generated_at": "2026-11-13T19:17:06.361475Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-11-13T19:16:00Z",
+  "latest_valid_time": "2026-11-13T19:17:00Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 3,
+  "feature_count": 4,
   "errors": [],
   "type": "FeatureCollection",
   "features": [
@@ -26,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-11-13T19:08:40Z",
-        "age_minutes": 7.6,
+        "age_minutes": 8.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263171908200_e20263171908400_c20263171908419.nc",
         "energy_j": 9.85824616384079e-12,
         "area_m2": 2032046336.0
@@ -43,7 +43,7 @@
       },
       "properties": {
         "valid_time": "2026-11-13T19:10:20Z",
-        "age_minutes": 5.9,
+        "age_minutes": 6.8,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263171910000_e20263171910200_c20263171910217.nc",
         "energy_j": 1.6812783804054376e-12,
         "area_m2": 980924736.0
@@ -60,10 +60,27 @@
       },
       "properties": {
         "valid_time": "2026-11-13T19:12:40Z",
-        "age_minutes": 3.6,
+        "age_minutes": 4.4,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263171912200_e20263171912400_c20263171912420.nc",
         "energy_j": 4.964265543777602e-12,
         "area_m2": 1543110016.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.34471,
+          39.20285
+        ]
+      },
+      "properties": {
+        "valid_time": "2026-11-13T19:16:20Z",
+        "age_minutes": 0.8,
+        "source_file": "OR_GLM-L2-LCFA_G19_s20263171916000_e20263171916200_c20263171916220.nc",
+        "energy_j": 2.8122738512936785e-12,
+        "area_m2": 701052928.0
       }
     }
   ]
