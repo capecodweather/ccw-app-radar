@@ -2,38 +2,19 @@
   "schema": "ccw-lightning-feed-v1",
   "source": "NOAA GOES-East GLM-L2-LCFA",
   "satellite": "noaa-goes19",
-  "generated_at": "2026-11-13T18:06:53.449489Z",
+  "generated_at": "2026-11-13T18:08:21.364158Z",
   "lookback_minutes": 10,
-  "latest_valid_time": "2026-11-13T18:06:40Z",
+  "latest_valid_time": "2026-11-13T18:08:00Z",
   "bounds": {
     "west": -76.97986607182095,
     "east": -65.87464449241776,
     "south": 37.9311348776695,
     "north": 45.92394244189266
   },
-  "feature_count": 2,
-  "errors": [
-    "OR_GLM-L2-LCFA_G19_s20263171802000_e20263171802200_c20263171802219.nc: <urlopen error _ssl.c:983: The handshake operation timed out>"
-  ],
+  "feature_count": 1,
+  "errors": [],
   "type": "FeatureCollection",
   "features": [
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.64925,
-          39.33027
-        ]
-      },
-      "properties": {
-        "valid_time": "2026-11-13T17:58:00Z",
-        "age_minutes": 8.9,
-        "source_file": "OR_GLM-L2-LCFA_G19_s20263171757400_e20263171758000_c20263171758020.nc",
-        "energy_j": 5.202830354045229e-13,
-        "area_m2": 351136864.0
-      }
-    },
     {
       "type": "Feature",
       "geometry": {
@@ -45,7 +26,7 @@
       },
       "properties": {
         "valid_time": "2026-11-13T17:59:20Z",
-        "age_minutes": 7.6,
+        "age_minutes": 9.0,
         "source_file": "OR_GLM-L2-LCFA_G19_s20263171759000_e20263171759200_c20263171759217.nc",
         "energy_j": 2.145276577908417e-12,
         "area_m2": 996490112.0
